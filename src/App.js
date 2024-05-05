@@ -13,7 +13,6 @@ export default function App() {
     </div>
   );
 }
-//test
 
 function Log() {
   return <h1>🌴Far Away 💼 </h1>;

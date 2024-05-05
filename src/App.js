@@ -25,9 +25,31 @@ function Form() {
     </div>
   );
 }
+function Item({ item }) {
+  return (
+    <li>
+      <span>
+        {item.quantity} {item.description}
+      </span>
+
+      <button>❌</button>
+    </li>
+  );
+}
 
 function Packinglist() {
-  return <ul className="list">LIST</ul>;
+  return (
+    <div className="list">
+      <ul>
+        {initialItems.map(
+          //the call back function...
+          (item) => (
+            <Item item={item} />
+          )
+        )}
+      </ul>
+    </div>
+  );
 }
 
 function Stats() {

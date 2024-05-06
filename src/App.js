@@ -1,6 +1,3 @@
-//this thunder works like magic. I wonder who sent it. perhaps the middle ravens? //
-
-
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: false },
   { id: 2, description: "Socks", quantity: 12, packed: false },
@@ -54,7 +51,6 @@ function Packinglist() {
     </div>
   );
 }
-//test
 
 function Stats() {
   return (

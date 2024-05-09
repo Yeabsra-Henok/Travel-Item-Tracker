@@ -97,5 +97,5 @@ function Stats() {
 }
 
 function Test3() {
-  return {console.log(e)};
+  return null;
 }

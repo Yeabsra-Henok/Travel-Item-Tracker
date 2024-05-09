@@ -24,7 +24,7 @@ function Log() {
 
 function Form() {
   const [description, setDescription] = useState("");
-  const [quantity, setQuantity] = useState(5);
+  const [quantity, setQuantity] = useState(1);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -43,12 +43,12 @@ function Form() {
         <option value={3}>1</option> 
         as this one 👇
         */}
-
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
             {num}
           </option>
         ))}
+        console.log(e.target.value);
       </select>
       <input
         type="text"

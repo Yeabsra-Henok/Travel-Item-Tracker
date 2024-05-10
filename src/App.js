@@ -83,7 +83,7 @@ function Form() {
   );
 }
 
-function Packinglist({item, onDeleteItem}) { //prp[s notworking]
+function Packinglist({item, onDeleteItem}) { //props notworking]
   return (
     <div className="list">
       <ul>

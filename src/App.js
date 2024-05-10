@@ -6,12 +6,28 @@ const initialItems = [
   { id: 3, description: "Charger", quantity: 1, packed: true },
 ];
 
+function Log() {
+  return <h1>🌴Far Away 💼 </h1>;
+}
+
+function Form() {
+  const [description, setDescription] = useState("");
+  const [items, setItems] = useState(1);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  function handleDelteItem(id) {
+    setItems((items) => items.filter((items) => items.id !== id));
+  }
+
 export default function App() {
   return (
     <div className="app">
       <Log />
       <Form />
-      <Packinglist />
+      <Packinglist items={items} onDeleteItem={handleDelteItem} />
       <Stats />
       <Test3 />
     </div>
@@ -24,18 +40,24 @@ function Log() {
 
 function Form() {
   const [description, setDescription] = useState("");
-  const [quantity, setQuantity] = useState(1);
+  const [items, setItems] = useState(1);
 
   function handleSubmit(e) {
     e.preventDefault();
   }
+
+  function handleDelteItem(id) {
+    setItems((items) => items.filter((items) => items.id !== id));
+  }
+
+  // function handleAddItems(items) {
+  //   setItems((items) => [...items, item]);
+  // }
+
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your trip</h3>
-      <select
-        value={quantity}
-        onChange={(e) => setQuantity(Number(e.target.value))}
-      >
+      <select value={items} onChange={(e) => setItems(Number(e.target.value))}>
         {/*
         this does the same job..
         <option value={1}>1</option>
@@ -80,7 +102,7 @@ function Item({ item }) {
   return (
     <li>
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
-        {item.quantity} {item.description}
+        {item.Items} {item.description}
       </span>
 
       <button>❌</button>

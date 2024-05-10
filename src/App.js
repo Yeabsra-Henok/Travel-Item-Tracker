@@ -83,7 +83,7 @@ function Form() {
   );
 }
 
-function Packinglist() {
+function Packinglist({item, onDeleteItem}) {
   return (
     <div className="list">
       <ul>

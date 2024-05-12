@@ -24,6 +24,8 @@ function Logo() {
 
 function Form() {
   const [description, setDescription] = useState("");
+  const [amount, Setamount] = useState(1);
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log(e);
@@ -43,7 +45,12 @@ function Form() {
         ))}
       </select>
 
-      <input type="text" placeholder="Item..." value={description} onChange={(e)=} />
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
       <button> Add </button>
     </form>
   );

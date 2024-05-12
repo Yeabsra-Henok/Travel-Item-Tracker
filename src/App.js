@@ -24,17 +24,23 @@ function Logo() {
 
 function Form() {
   const [description, setDescription] = useState("");
-  const [amount, Setamount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e);
+    if (!description) return;
+
+    const newItem = { description, quantity, packed: false, id: Date.now() };
+    console.log(newItem);
+
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your trip?</h3>
-      <select value={amount} onChange={(e) => Setamount(e.target.value)}>
+      <select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
         {/* <option value={1}> 1 </option>
         <option value={2}> 2 </option>
         <option value={3}> 3 </option> */}

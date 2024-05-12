@@ -34,7 +34,7 @@ function Form() {
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h3>What do you need for your trip?</h3>
-      <select>
+      <select value={amount} onChange={(e) => Setamount(e.target.value)}>
         {/* <option value={1}> 1 </option>
         <option value={2}> 2 </option>
         <option value={3}> 3 </option> */}

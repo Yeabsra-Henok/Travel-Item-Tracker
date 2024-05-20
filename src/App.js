@@ -7,7 +7,7 @@ import { useState } from "react";
 // ];
 
 export default function App() {
-  const [items, setItems] = useState({});
+  const [items, setItems] = useState([]);
 
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
@@ -15,7 +15,7 @@ export default function App() {
 
   function handleDeleteItem(id) {
     console.log(id);
-    setItems((item) => items.filter((item) => item.id != id));
+    setItems((items) => items.filter((item) => item.id != id));
   }
   function handleToggleItem(id) {
     setItems((items) =>
